@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %} - Log In{% endblock %}
+
+{% block main %}
+
+    <div class="headline">
+        <h3>Log In to stay on track!</h3>
+    </div>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+            <br>
+            <div class="message">
+                <h4>{{msg}}</h4>
+            </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form action="/login" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+        </div>
+        <button class="submitBut" type="submit">LOG IN</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+     {% if current_user.is_authenticated %}
+
+          <div class="head">
+               <h2>{{current_user.username}}'s TASKS</h2>
+
+               <form action="/" method="POST" style="margin: 20px auto;">
+                    <div class="mb-3">
+                         <input class="form-control mx-auto w-auto" id="task" name="task" placeholder="I will..." type="text">
+                    </div>
+                    <button class="submitBut" type="submit">Add Goal</button>
+               </form>
+          </div>
+
+          <ul style="list-style: none;">
+          {% for task in tasks %}
+          <div class="box-task">
+                         <form action="/" method="POST" name="xd">
+                              <li class="list-task">{{task[0]}}
+                              <input type="text" name="task_index" value="{{task[1]}}" style="display: none;">
+                              <input class="marquer" id="finish" name="finish" type="submit" value="✓">
+                              <input class="marquer" id="delete" name="delete" type="submit" value="X">
+                         </form>
+               </li>
+          </div>
+          {% endfor %}
+          <ul>
+
+     {% else %}
+     <h1 class="headline">GoalSetter</h1>
+     <br>
+     <div class="grid-container">
+          <div class="stat">
+              <h3>Never forget where you aim for, be focus</h3>
+          </div>
+
+          <div class="stat">
+              <h3>Set your weekly goals to stay on the top</h3>
+          </div>
+
+          <div class="stat">
+              <h3>Increase your overall productivity and outperform others</h3>
+          </div>
+      </div>
+      <form class="head" style="display: inline; box-shadow: 0.3rem 0.3rem black, -0.3rem -0.3rem #ccc;">
+          <input class="submitBut" type="submit" formaction="/login" value="LOG IN">
+          <input class="submitBut" type="submit" formaction="/register" value="REGISTER">
+      </form>
+     
+     {% endif %}
+
+{% endblock %}

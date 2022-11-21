@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block title %} - Register{% endblock %}
+
+
+{% block main %}
+
+    <div class="headline"">
+        <h3>Register to be on the top!</h3>
+    </div>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+            <br>
+            <div class="message">
+                <h4>{{msg}}</h4>
+            </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <form action="/register" method="post">
+        <div class="mb-3">
+            <input type="text" name="username" placeholder="Username" autofocus autocomplete="off" class="form-control mx-auto w-auto">
+        </div>
+        <div class="mb-3">
+            <input type="password" name="password" placeholder="Password" autcomplete="off" class="form-control mx-auto w-auto">
+        </div>
+        <div class="mb-3">
+            <input type="password" name="confirmation" placeholder="Repeat password" autcomplete="off" class="form-control mx-auto w-auto">
+        </div>
+
+        <button class="submitBut" type="submit">REGISTER</button>
+
+    </form>
+
+{% endblock %}

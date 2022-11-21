@@ -1,0 +1,276 @@
+* { margin: 0; }
+
+.body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.form-control:focus {
+  border-color: azure;
+  box-shadow: 0px 0px 3px black;
+}
+
+.head {
+  display: inline-block;
+  width: 60%;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+  padding: 15px;
+  margin-bottom: 50px;
+  background-color: DarkBlue;
+}
+
+/* Properties for marquers in task */
+
+.marquer {
+  background-color: rgba(0, 0, 0, 0.8) ;
+  font-size: 10px;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 0px solid white;
+}
+
+#finish {
+  color: green;
+}
+
+#delete {
+  color: red;
+}
+
+/* Properties for tasks */
+.list-task {
+  font-family: 'Montserrat';
+  font-weight: bold;
+}
+
+.box-task {
+  text-align: left;
+  padding: 10px 20px;
+  border-bottom: 1px solid black;
+  margin: 5px;
+}
+
+/* HEADINGS */
+
+h1 {
+  text-align: center;
+  font-family: 'Poppins';
+  font-weight: bold;
+  font-size: 55px;
+  color: white;
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Montserrat';
+  font-weight: bold;
+  font-size: 40px;
+  color: white;
+}
+
+h3 {
+  text-align: center;
+  font-family: 'Poppins';
+  font-weight: bold;
+  font-size: 30px;
+  color: white;
+}
+
+h4 {
+  font-family: "Montserrat";
+  color: white;
+  font-size: 16px;
+}
+
+/* Properties for message */
+.message {
+  color: white;
+  background-color: #FF7377;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  display: inline-block;
+  text-align: center;
+  padding: 10px 40px;
+}
+
+
+/* For navbar */
+.navbar a {
+  color: white;
+  text-align: center;
+  font-size: 1.3rem;
+  font-family: 'Montserrat';
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: RoyalBlue;
+}
+
+.navbar a.active {
+  color: RoyalBlue;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  background-color: Black;
+  box-shadow: 0px 0px 4px Black;
+  position: fixed;
+  top: 0;
+}
+
+.nav-list {
+  margin: 0px;
+  list-style-type: none;
+}
+
+.list-item {
+  display: inline;
+  padding: 0px 15px;
+}
+
+.list-item:not(:last-child){
+  border-right: 1px solid white;
+}
+
+.menu {
+  display: none;
+}
+
+.bar {
+  width: 20px;
+  height: 2.5px;
+  background-color: white;
+  margin-bottom: 4px;
+  border-radius: 5px;
+}
+
+footer {
+  bottom: 0px;
+  background-color: black;
+  margin: 100px auto 0px;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0px 0px 4px Black;
+  clear: both;
+}
+
+/* Properties for headline */
+
+.headline {
+  display: inline-block;
+  background-color: black;
+  border-width: 1px;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  box-shadow: 0.5rem 0.5rem #ccc, -0.5rem -0.5rem darkblue;
+  margin-bottom: 50px;
+}
+
+/* properties for our submit button for logging */
+.submitBut {
+  background-color: black;
+  border-width: 1px;
+  color: white;
+  padding: 3px;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: 'Montserrat';
+  font-weight: bold;
+}
+
+.submitBut:hover {
+  color: royalblue;
+}
+
+
+/* Properties for new users */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 90%;
+  margin: auto auto 50px;
+}
+
+.stat {
+  grid-column: 1;
+  border: 1px solid black;
+  border-radius: 2px;
+  box-shadow: 0.5rem 0.5rem black, -0.5rem -0.5rem #ccc;
+  margin: 30px;
+  padding: 20px;
+  background-color: DarkBlue;
+  transition: all 0.5s ease-in-out;
+}
+
+.stat:nth-child(even) {
+  grid-row: 2;
+  grid-column: 2;
+}
+
+.stat:nth-child(3) {
+  grid-row: 3;
+}
+
+.stat:hover {
+  transform: scale(1.1);
+}
+
+/* Properties for footer */
+footer {
+  bottom: 0px;
+  background-color: black;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  width: 100%;
+  box-shadow: 0px 0px 4px Black;
+  clear: both;
+}
+
+/* RESPONSIVENESS */
+
+@media only screen and (max-width: 600px) {
+  h1 {font-size: 30px}
+  h2 {font-size: 18px}
+  h3 {font-size: 16px}
+  .head {width: 90%;}
+  .grid-container {grid-template-columns: auto; width: 100%;}
+  .stat {margin: 15px; padding: 10px; box-shadow: 0.3rem 0.3rem black, -0.3rem -0.3rem #ccc;}
+  .stat:nth-child(even) {grid-column: 1;}
+  .stat:hover {transform: scale(1.04);}
+  .navbar a {font-size: .9rem;}
+  .submitBut {font-size: .9rem;}
+  .menu {display: block; position: absolute; right: 15px; top: 15px;}
+  .nav-list  {width: 100%; padding-top: 10px; display: none;}
+  .list-item {display: block; padding: 2px 0px; text-align: center;}
+  .open {display: block;}
+}
+
+@media only screen and (min-width: 600px) and (max-width: 992px) {
+  h1 {font-size: 40px}
+  h2 {font-size: 24px}
+  h3 {font-size: 22px}
+  .head {width: 80%;}
+  .grid-container {grid-template-columns: auto;}
+  .stat {margin: 20px; padding: 15px; box-shadow: 0.4rem 0.4rem black, -0.4rem -0.4rem #ccc; }
+  .stat:nth-child(even) {grid-column: 1;}
+  .stat:hover {transform: scale(1.04)}
+  .navbar a {font-size: .7rem;}
+  .submitBut {font-size: .7rem;}
+  .menu {display: block; position: absolute; right: 15px; top: 15px;}
+  .nav-list  {width: 100%; padding-top: 10px; display: none;}
+  .list-item {display: block; padding: 2px 0px; text-align: center;}
+  .open {display: block;}
+}
